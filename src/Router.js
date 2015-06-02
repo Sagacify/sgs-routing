@@ -142,7 +142,12 @@ module.exports = function(mongoose){
 				this._modelsByCollectionName = {};
 				var me = this;
 				_.values(mongoose.models).forEach(function(model){
-					me._modelsByCollectionName[model.collection.name] = model;
+					var name = model.collection.name;
+					var camelizedName = _(name).camelize();
+					me._modelsByCollectionName[name] = model;
+					if(name !== camelizedName) {
+						me._modelsByCollectionName[camelizedName] = model;
+					}
 				});
 			}
 			return this._modelsByCollectionName;
