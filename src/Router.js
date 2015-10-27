@@ -41,7 +41,7 @@ module.exports = function(mongoose){
 			
 			return function(req, res, next){
 				var splitPath = this.getSplittedPath(req.route.path);// req.route.path.split('/').slice(1);
-				// req.splitPath = splitPath;
+				req.splitPath = splitPath;
 				async.reduce(splitPath, null, function(obj, path, callback){
 
 					if(path === options.initiator){
