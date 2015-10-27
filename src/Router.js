@@ -28,6 +28,11 @@ module.exports = function(mongoose){
 				});
 			};
 		},
+		
+		getSplittedPath: function(path) {
+			var splitPath = path.split('/').slice(1);
+			return splitPath;
+		},
 
 		follow: function(options) {
 			options = _.extend(options||{}, this.options);
@@ -35,8 +40,8 @@ module.exports = function(mongoose){
 			var me = this;
 			
 			return function(req, res, next){
-				var splitPath = req.route.path.split('/').slice(1);
-				req.splitPath = splitPath;
+				var splitPath = this.getSplittedPath(req.route.path);// req.route.path.split('/').slice(1);
+				// req.splitPath = splitPath;
 				async.reduce(splitPath, null, function(obj, path, callback){
 
 					if(path === options.initiator){
