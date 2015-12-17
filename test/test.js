@@ -16,8 +16,8 @@ var Router = require('../src/index')(mongoose);
 var router = new Router({});
 var route = router.route.bind(router);
 
-//var test = mongoose.model('Test')({embeddedTests: [{embeddedTests2: [{}]}]});
-// test.linkedTest = test._id;
+var test = mongoose.model('Test')({embeddedTests: [{embeddedTests2: [{}]}]});
+test.linkedTest = test._id;
 
 // var tt = test.embeddedTests[0].embeddedTests2[0];
 // test.embeddedTests[0].embeddedTests2[0].linkedTest2 = test._id;

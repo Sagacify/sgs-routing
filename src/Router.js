@@ -139,10 +139,10 @@ module.exports = function(mongoose){
 		},
 
 		getModelByCollectionName: function(name, options){
-			return this.getModelsByCollectionName()[name];
+			return this.getModelsByCollectionName(options)[name];
 		},
 
-		getModelsByCollectionName: function(){
+		getModelsByCollectionName: function(options){
 			if(!this._modelsByCollectionName){
 				this._modelsByCollectionName = {};
 				var me = this;
