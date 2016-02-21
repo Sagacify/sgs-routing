@@ -5,7 +5,7 @@
 	"description": "Sagacify's routing module.",
 	"main": "src/index.js",
 	"scripts": {
-		"test": "grunt ci --verbose"
+
 	},
 	"dependencies": {
 		"mongoose": "^3.0.0",
@@ -35,7 +35,7 @@
 		"type": "git",
 		"url": "https://github.com/Sagacify/sgs-routing"
 	},
-	"author": "François Beuvens (https://github.com/fbeuvens)",
+	"author": "Sagacify",
 	"bugs": {
 		"url": "https://github.com/Sagacify/sgs-routing/issues"
 	},
