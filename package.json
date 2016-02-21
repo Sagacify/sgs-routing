@@ -1,6 +1,5 @@
 {
 	"name": "sgs-routing",
-	"private": true,
 	"version": "1.0.0",
 	"description": "Sagacify's routing module.",
 	"main": "src/index.js",
